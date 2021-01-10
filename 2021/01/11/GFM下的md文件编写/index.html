@@ -19,9 +19,9 @@
 <meta property="og:image" content="http://example.com/images/avatar.png">
 <meta property="og:image" content="c:/Users/User/AppData/Roaming/Typora/typora-user-images/image-20210110235328503.png">
 <meta property="article:published_time" content="2021-01-10T16:38:42.000Z">
-<meta property="article:modified_time" content="2021-01-10T16:39:10.827Z">
+<meta property="article:modified_time" content="2021-01-10T16:52:57.696Z">
 <meta property="article:author" content="Qiao renjie">
-<meta property="article:tag" content="开发者,前端学习,编程">
+<meta property="article:tag" content="博客搭建">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://zhuzhuyule.xyz/images/avatar.png">
   
@@ -196,6 +196,7 @@ var _hmt = _hmt || [];
         <h1 id="GFM下的md文件书写"><a href="#GFM下的md文件书写" class="headerlink" title="GFM下的md文件书写"></a>GFM下的md文件书写</h1><p>[toc]</p>
 <p><a target="_blank" rel="noopener" href="http://www.appinn.com/markdown/"><strong><em>Markdown\</em></strong></a> 是一种轻量级的<strong>「标记语言」</strong>，优点在于<br>- <strong>专注你的文字内容而不是排版样式。</strong><br>- <strong>轻松的导出 HTML、PDF 和本身的 .md 文件。</strong><br>- <strong>纯文本内容，兼容所有的文本编辑器与字处理软件。</strong><br>- <strong>可读，直观。适合所有人的写作语言</strong></p>
 <p>Hexo下使用的<strong>MarkDown</strong>为Github的<a target="_blank" rel="noopener" href="https://help.github.com/categories/writing-on-github/">GFM</a>，风格很漂亮，简洁美观大方。但是<em>GFM</em> 的<strong>MarkDown</strong>语法和<em>标准</em> 的<strong>MarkDown</strong>稍有不同，使用过程中需要注意一些。</p>
+<a id="more"></a> 
 <p>首先介绍</p>
 <h2 id="常用的markdown基础语法："><a href="#常用的markdown基础语法：" class="headerlink" title="常用的markdown基础语法："></a>常用的markdown基础语法：</h2><h3 id="标题及强调"><a href="#标题及强调" class="headerlink" title="标题及强调"></a>标题及强调</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 欢迎使用Markdown编辑器写博客    //一级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span></span><br><span class="line"><span class="section">## 标题输入                     //二级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span></span><br><span class="line"><span class="section">### 三级标题                    //三级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h3</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span></span><br><span class="line"><span class="section">#### 四级标题                   //四级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h4</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span></span></span><br><span class="line"><span class="section">##### 五级标题                  //五级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h5</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span></span></span><br><span class="line"><span class="section">###### 六级标题                 //六级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h6</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span></span></span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">字体 **加粗** 显示</span><br><span class="line">字体 *斜体* 显示</span><br><span class="line">字体 ***加粗并斜体*** 显示</span><br><span class="line">这样来 ~~删除一段文本~~</span><br></pre></td></tr></table></figure>
@@ -337,7 +338,29 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">博客搭建</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -422,6 +445,19 @@ var _hmt = _hmt || [];
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GFM%E4%B8%8B%E7%9A%84md%E6%96%87%E4%BB%B6%E4%B9%A6%E5%86%99"><span class="toc-number">1.</span> <span class="toc-text">GFM下的md文件书写</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84markdown%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">常用的markdown基础语法：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E9%A2%98%E5%8F%8A%E5%BC%BA%E8%B0%83"><span class="toc-number">1.1.1.</span> <span class="toc-text">标题及强调</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-number">1.1.2.</span> <span class="toc-text">引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97"><span class="toc-number">1.1.3.</span> <span class="toc-text">嵌套</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC"><span class="toc-number">1.1.4.</span> <span class="toc-text">表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">1.1.5.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">1.1.6.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E6%8F%92%E5%85%A5"><span class="toc-number">1.1.7.</span> <span class="toc-text">链接插入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5"><span class="toc-number">1.1.8.</span> <span class="toc-text">图片插入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E6%A0%BC%E4%B8%8E%E6%8D%A2%E8%A1%8C-GFM%E4%B8%8B%E7%9A%84%E5%8F%98%E5%8A%A8"><span class="toc-number">1.1.9.</span> <span class="toc-text">空格与换行(GFM下的变动)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typora-%E7%89%B9%E6%80%A7"><span class="toc-number">1.1.10.</span> <span class="toc-text">Typora 特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#emoji%E8%A1%A8%E6%83%85"><span class="toc-number">1.1.10.1.</span> <span class="toc-text">emoji表情</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Latex%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81"><span class="toc-number">1.1.10.2.</span> <span class="toc-text">Latex语法支持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%84%9A%E6%B3%A8"><span class="toc-number">1.1.10.3.</span> <span class="toc-text">脚注</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E4%BC%AA%E8%A3%85%E6%88%90%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-number">1.1.10.4.</span> <span class="toc-text">一个伪装成文本编辑器的浏览器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E5%87%BA%E4%B8%BA-HTML"><span class="toc-number">1.1.10.5.</span> <span class="toc-text">导出为 HTML</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS"><span class="toc-number">1.1.10.6.</span> <span class="toc-text">CSS</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">1.1.11.</span> <span class="toc-text">参考</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -548,6 +584,10 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">git学习</a>
