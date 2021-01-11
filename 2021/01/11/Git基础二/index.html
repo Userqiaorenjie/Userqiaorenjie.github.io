@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>乔仁杰的个人博客</title>
+  <title>Git基础(二) | 乔仁杰的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="有志者事竟成,我的一个博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="乔仁杰的个人博客">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="1. 取得项目的Git仓库有两种取得 Git 项目仓库的方法。第一种是在现存的目录下，通过导入所有文件来创建新的 Git 仓库。第二种是从已有的 Git 仓库克隆出一个新的镜像仓库来。 1.1 在工作目录中初始化新仓库要对现有的某个项目开始用 Git 管理，只需到此项目所在的目录，执行： 1$ git init">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git基础(二)">
+<meta property="og:url" content="http://example.com/2021/01/11/Git%E5%9F%BA%E7%A1%80%E4%BA%8C/index.html">
 <meta property="og:site_name" content="乔仁杰的个人博客">
-<meta property="og:description" content="有志者事竟成,我的一个博客">
+<meta property="og:description" content="1. 取得项目的Git仓库有两种取得 Git 项目仓库的方法。第一种是在现存的目录下，通过导入所有文件来创建新的 Git 仓库。第二种是从已有的 Git 仓库克隆出一个新的镜像仓库来。 1.1 在工作目录中初始化新仓库要对现有的某个项目开始用 Git 管理，只需到此项目所在的目录，执行： 1$ git init">
 <meta property="og:locale">
+<meta property="article:published_time" content="2021-01-11T15:04:00.000Z">
+<meta property="article:modified_time" content="2021-01-11T16:37:00.420Z">
 <meta property="article:author" content="Qiao renjie">
-<meta property="article:tag" content="开发者,前端学习,编程">
+<meta property="article:tag" content="git学习">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="乔仁杰的个人博客" type="application/atom+xml">
@@ -172,16 +174,14 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Git基础二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Git基础二" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/11/Git%E5%9F%BA%E7%A1%80%E4%BA%8C/">Git基础(二)</a>
+    <h1 class="article-title" itemprop="name">
+      Git基础(二)
     </h1>
   
 
@@ -197,11 +197,98 @@ var _hmt = _hmt || [];
         <h2 id="1-取得项目的Git仓库"><a href="#1-取得项目的Git仓库" class="headerlink" title="1. 取得项目的Git仓库"></a>1. 取得项目的Git仓库</h2><p>有两种取得 Git 项目仓库的方法。第一种是在现存的目录下，通过导入所有文件来创建新的 Git 仓库。第二种是从已有的 Git 仓库克隆出一个新的镜像仓库来。</p>
 <h3 id="1-1-在工作目录中初始化新仓库"><a href="#1-1-在工作目录中初始化新仓库" class="headerlink" title="1.1 在工作目录中初始化新仓库"></a>1.1 在工作目录中初始化新仓库</h3><p>要对现有的某个项目开始用 Git 管理，只需到此项目所在的目录，执行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/01/11/Git%E5%9F%BA%E7%A1%80%E4%BA%8C/#more">more >></a>
-        
+<a id="more"></a>
+<p>初始化后，在当前目录下会出现一个名为 <strong>.git</strong> 的目录，所有 Git 需要的数据和资源都存放在这个目录中。不过目前，仅仅是按照既有的结构框架<strong>初始化好了里边所有的文件和目录</strong>，但我们还没有开始跟踪管理项目中的任何一个文件。<br>如果当前目录下有几个文件想要纳入版本控制，需要先用 <code>git add</code> 命令告诉 Git 开始对这些文件进行<strong>跟踪</strong>，然后<strong>提交</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add *.c</span><br><span class="line">$ git add README</span><br><span class="line">$ git commit -m <span class="string">&#x27;initial project version&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-2-从现有仓库克隆"><a href="#1-2-从现有仓库克隆" class="headerlink" title="1.2 从现有仓库克隆"></a>1.2 从现有仓库克隆</h3><p>如果想对某个开源项目出一份力，可以先把该项目的 Git 仓库复制一份出来，这就需要用到 <code>git clone</code> 命令。</p>
+<p>克隆仓库的命令格式为 <code>git clone [url]</code>。比如，要克隆 Ruby 语言的 Git 代码仓库 Grit，可以用下面的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone git:&#x2F;&#x2F;github.com&#x2F;schacon&#x2F;grit.git</span><br></pre></td></tr></table></figure>
+<p>这会在当前目录下创建一个名为<code>grit</code>的目录，其中包含一个 <code>.git</code> 的目录，<strong>用于保存下载下来的所有版本记录，然后从中取出最新版本的文件拷贝</strong>。如果进入这个新建的 <code>grit</code> 目录，你会看到项目中的所有文件已经在里边了，准备好后续的开发和使用。如果希望在克隆的时候，自己定义要新建的项目目录名称，可以在上面的命令末尾指定新的名字：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone git:&#x2F;&#x2F;github.com&#x2F;schacon&#x2F;grit.git mygrit</span><br></pre></td></tr></table></figure>
+<p>唯一的差别就是，现在新建的目录成了 <code>mygrit</code>，其他的都和上边的一样。</p>
+<p>Git 支持许多数据传输协议。之前的例子使用的是 <code>git://</code> 协议，不过你也可以用 <code>http(s)://</code> 或者 <code>user@server:/path.git</code> 表示的 SSH 传输协议。</p>
+<h2 id="2-记录每次更新"><a href="#2-记录每次更新" class="headerlink" title="2. 记录每次更新"></a>2. 记录每次更新</h2><p>请记住，工作目录下面的所有文件都不外乎这两种状态：已跟踪或未跟踪。已跟踪的文件是指本来就被纳入版本控制管理的文件，在上次快照中有它们的记录，工作一段时间后，它们的状态可能是未更新，已修改或者已放入暂存区。而所有其他文件都属于未跟踪文件。它们既没有上次更新时的快照，也不在当前的暂存区域。初次克隆某个仓库时，工作目录中的所有文件都属于已跟踪文件，且状态为未修改。</p>
+<p>在编辑过某些文件之后，Git 将这些文件标为已修改。我们逐步把这些修改过的文件放到暂存区域，直到最后一次性提交所有这些暂存起来的文件，如此重复。</p>
+<h3 id="2-1-检查当前文件状态"><a href="#2-1-检查当前文件状态" class="headerlink" title="2.1 检查当前文件状态"></a>2.1 检查当前文件状态</h3><p>要确定哪些文件当前处于什么状态，可以用 <code>git status</code> 命令。如果在克隆仓库之后立即执行此命令，会看到类似这样的输出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working directory clean</span><br></pre></td></tr></table></figure>
+<p>这说明你现在的工作目录相当干净。换句话说，所有已跟踪文件在上次提交后都未被更改过。此外，上面的信息还表明，当前目录下没有出现任何处于未跟踪的新文件，否则 Git 会在这里列出来。最后，该命令还显示了当前所在的分支是 <code>master</code>，这是默认的分支名称。</p>
+<p>现在让我们用 vim 创建一个新文件 README，保存退出后运行 <code>git status</code> 会看到该文件出现在未跟踪文件列表中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ vim README</span><br><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Untracked files:</span><br><span class="line">  (use <span class="string">&quot;git add &lt;file&gt;...&quot;</span> to include <span class="keyword">in</span> what will be committed)</span><br><span class="line"></span><br><span class="line">        README</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use <span class="string">&quot;git add&quot;</span> to track)</span><br></pre></td></tr></table></figure>
+<p>在状态报告中可以看到新建的<code>README</code>文件出现在<strong>“Untracked files”</strong>下面。未跟踪的文件意味着Git在之前的快照（提交）中没有这些文件；Git 不会自动将之纳入跟踪范围，除非你明明白白地告诉它“我需要跟踪该文件”，因而不用担心把临时文件什么的也归入版本管理。不过现在的例子中，我们确实想要跟踪管理 README 这个文件。</p>
+<h3 id="2-2-跟踪新文件"><a href="#2-2-跟踪新文件" class="headerlink" title="2.2 跟踪新文件"></a>2.2 跟踪新文件</h3><p>使用命令 <code>git add</code> 开始跟踪一个新文件。所以，要跟踪 README 文件，运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add README</span><br></pre></td></tr></table></figure>
+<p>此时再运行 <code>git status</code> 命令，会看到 README 文件已被跟踪，并处于暂存状态：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use <span class="string">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage)</span><br><span class="line"></span><br><span class="line">        new file:   README</span><br></pre></td></tr></table></figure>
+<p>只要在 <strong>“Changes to be committed”</strong> 这行下面的，就说明是已暂存状态。如果此时提交，那么该文件此时此刻的版本将被留存在历史记录中。</p>
+<h3 id="2-3-暂存已修改文件"><a href="#2-3-暂存已修改文件" class="headerlink" title="2.3 暂存已修改文件"></a>2.3 暂存已修改文件</h3><p>现在我们修改下之前已跟踪过的文件 <code>benchmarks.rb</code>，然后再次运行 <code>status</code> 命令，会看到这样的状态报告：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use <span class="string">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage)</span><br><span class="line"></span><br><span class="line">        new file:   README</span><br><span class="line"></span><br><span class="line">Changes not staged <span class="keyword">for</span> commit:</span><br><span class="line">  (use <span class="string">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed)</span><br><span class="line">  (use <span class="string">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes <span class="keyword">in</span> working directory)</span><br><span class="line"></span><br><span class="line">        modified:   benchmarks.rb</span><br></pre></td></tr></table></figure>
+<p>文件 <code>benchmarks.rb</code> 出现在 **“Changes not staged for commit” **这行下面，说明已跟踪文件的内容发生了变化，但还没有放到暂存区。要暂存这次更新，需要运行 <code>git add</code> 命令。</p>
+<p>很多时候可以通过<strong>git status</strong>下的提示来进行下一步操作。</p>
+<p>现在让我们运行 <code>git add</code> 将 benchmarks.rb 放到暂存区，然后再看看 <code>git status</code> 的输出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git add benchmarks.rb</span><br><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use <span class="string">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage)</span><br><span class="line"></span><br><span class="line">        new file:   README</span><br><span class="line">        modified:   benchmarks.rb</span><br></pre></td></tr></table></figure>
+<p>现在两个文件都已暂存，下次提交时就会一并记录到仓库。假设此时，你想要在 <code>benchmarks.rb</code> 里再加条注释，重新编辑存盘后，准备好提交。不过且慢，再运行 <code>git status</code> 看看：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ vim benchmarks.rb</span><br><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use <span class="string">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage)</span><br><span class="line"></span><br><span class="line">        new file:   README</span><br><span class="line">        modified:   benchmarks.rb</span><br><span class="line"></span><br><span class="line">Changes not staged <span class="keyword">for</span> commit:</span><br><span class="line">  (use <span class="string">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed)</span><br><span class="line">  (use <span class="string">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes <span class="keyword">in</span> working directory)</span><br><span class="line"></span><br><span class="line">        modified:   benchmarks.rb</span><br></pre></td></tr></table></figure>
+<p>怎么回事？ <code>benchmarks.rb</code> 文件出现了两次！一次算未暂存，一次算已暂存，这怎么可能呢？好吧，实际上 Git 只不过暂存了你运行 <code>git add</code> 命令时的版本，如果现在提交，那么提交的是添加注释前的版本，而非当前工作目录中的版本。所以，运行了 <code>git add</code> 之后又作了修订的文件，需要<strong>重新运行</strong> <code>git add</code> 把<strong>最新版本重新暂存起来</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git add benchmarks.rb</span><br><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use <span class="string">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage)</span><br><span class="line"></span><br><span class="line">        new file:   README</span><br><span class="line">        modified:   benchmarks.rb</span><br></pre></td></tr></table></figure>
+<h2 id="2-4-查看已暂存和未暂存的更新"><a href="#2-4-查看已暂存和未暂存的更新" class="headerlink" title="2.4 查看已暂存和未暂存的更新"></a>2.4 查看已暂存和未暂存的更新</h2><p>实际上 <code>git status</code> 的显示比较简单，仅仅是列出了修改过的文件，如果要查看具体修改了什么地方，可以用 <code>git diff</code> 命令。</p>
+<p>假如再次修改 <code>README</code> 文件后暂存，然后编辑 <code>benchmarks.rb</code> 文件后先别暂存，运行 <code>status</code> 命令将会看到：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use <span class="string">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage)</span><br><span class="line"></span><br><span class="line">        new file:   README</span><br><span class="line"></span><br><span class="line">Changes not staged <span class="keyword">for</span> commit:</span><br><span class="line">  (use <span class="string">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed)</span><br><span class="line">  (use <span class="string">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes <span class="keyword">in</span> working directory)</span><br><span class="line"></span><br><span class="line">        modified:   benchmarks.rb</span><br></pre></td></tr></table></figure>
+<p><strong>要查看尚未暂存的文件更新了哪些部分</strong>，不加参数直接输入 <code>git diff</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ git diff</span><br><span class="line">diff --git a/benchmarks.rb b/benchmarks.rb</span><br><span class="line">index 3cb747f..da65585 100644</span><br><span class="line">--- a/benchmarks.rb</span><br><span class="line">+++ b/benchmarks.rb</span><br><span class="line">@@ -36,6 +36,10 @@ def main</span><br><span class="line">           @commit.parents[0].parents[0].parents[0]</span><br><span class="line">         end</span><br><span class="line"></span><br><span class="line">+        run_code(x, <span class="string">&#x27;commits 1&#x27;</span>) <span class="keyword">do</span></span><br><span class="line">+          git.commits.size</span><br><span class="line">+        end</span><br><span class="line">+</span><br><span class="line">         run_code(x, <span class="string">&#x27;commits 2&#x27;</span>) <span class="keyword">do</span></span><br><span class="line">           <span class="built_in">log</span> = git.commits(<span class="string">&#x27;master&#x27;</span>, 15)</span><br><span class="line">           log.size</span><br></pre></td></tr></table></figure>
+<p><strong>若要看已经暂存起来的文件和上次提交时的快照之间的差异</strong>，可以用 <code>git diff --cached</code> 命令。（Git 1.6.1 及更高版本还允许使用 <code>git diff --staged</code>，效果是相同的，但更好记些。）来看看实际的效果：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ git diff --cached</span><br><span class="line">diff --git a/README b/README</span><br><span class="line">new file mode 100644</span><br><span class="line">index 0000000..03902a1</span><br><span class="line">--- /dev/null</span><br><span class="line">+++ b/README2</span><br><span class="line">@@ -0,0 +1,5 @@</span><br><span class="line">+grit</span><br><span class="line">+ by Tom Preston-Werner, Chris Wanstrath</span><br><span class="line">+ http://github.com/mojombo/grit</span><br><span class="line">+</span><br><span class="line">+Grit is a Ruby library <span class="keyword">for</span> extracting information from a Git repository</span><br></pre></td></tr></table></figure>
+<p>请注意，单单 <code>git diff</code> 不过是显示还没有暂存起来的改动，而不是这次工作和上次提交之间的差异。</p>
+<h3 id="2-5-提交更新"><a href="#2-5-提交更新" class="headerlink" title="2.5 提交更新"></a>2.5 提交更新</h3><p>现在的暂存区域已经准备妥当可以提交了。在此之前，请一定要确认还有什么修改过的或新建的文件还没有 <code>git add</code> 过，否则提交的时候不会记录这些还没暂存起来的变化。所以，每次准备提交前，先用 <code>git status</code> 看下，是不是都已暂存起来了，然后再运行提交命令 <code>git commit</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit</span><br></pre></td></tr></table></figure>
+<p>这种方式会启动文本编辑器以便输入本次提交的说明。（默认会启用 shell 的环境变量 <code>$EDITOR</code> 所指定的软件，一般都是 vim 或 emacs。当然也可以按照第一章介绍的方式，使用 <code>git config --global core.editor</code> 命令设定你喜欢的编辑软件。）</p>
+<p>编辑器会显示类似下面的文本信息（本例选用 Vim 的屏显方式展示）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Please enter the commit message for your changes. Lines starting</span></span><br><span class="line"><span class="comment"># with &#x27;#&#x27; will be ignored, and an empty message aborts the commit.</span></span><br><span class="line"><span class="comment"># On branch master</span></span><br><span class="line"><span class="comment"># Changes to be committed:</span></span><br><span class="line"><span class="comment">#       new file:   README</span></span><br><span class="line"><span class="comment">#       modified:   benchmarks.rb</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">~</span><br><span class="line">~</span><br><span class="line">~</span><br><span class="line"><span class="string">&quot;.git/COMMIT_EDITMSG&quot;</span> 10L, 283C</span><br></pre></td></tr></table></figure>
+<p>可以看到，默认的提交消息包含最后一次运行 <code>git status</code> 的输出，放在注释行里，另外开头还有一空行，供你输入提交说明。你完全可以去掉这些注释行，不过留着也没关系，多少能帮你回想起这次更新的内容有哪些。（如果觉得这还不够，可以用 <code>-v</code> 选项将修改差异的每一行都包含到注释中来。）退出编辑器时，Git 会丢掉注释行，将说明内容和本次更新提交到仓库。</p>
+<h3 id="2-6-移除文件"><a href="#2-6-移除文件" class="headerlink" title="2.6 移除文件"></a>2.6 移除文件</h3><p>要从 Git 中移除某个文件，就必须要从已跟踪文件清单中移除（确切地说，是从暂存区域移除），然后提交。可以用 <code>git rm</code> 命令完成此项工作，并连带从工作目录中删除指定的文件。</p>
+<p>如果只是简单地从工作目录中手工删除文件，运行 <code>git status</code> 时就会在 “Changes not staged for commit” 部分（也就是<em>未暂存</em>清单）看到：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ rm grit.gemspec</span><br><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes not staged <span class="keyword">for</span> commit:</span><br><span class="line">  (use <span class="string">&quot;git add/rm &lt;file&gt;...&quot;</span> to update what will be committed)</span><br><span class="line">  (use <span class="string">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes <span class="keyword">in</span> working directory)</span><br><span class="line"></span><br><span class="line">        deleted:    grit.gemspec</span><br><span class="line"></span><br><span class="line">no changes added to commit (use <span class="string">&quot;git add&quot;</span> and/or <span class="string">&quot;git commit -a&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>然后再运行 <code>git rm</code> 记录此次移除文件的操作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git rm grit.gemspec</span><br><span class="line">rm <span class="string">&#x27;grit.gemspec&#x27;</span></span><br><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use <span class="string">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage)</span><br><span class="line"></span><br><span class="line">        deleted:    grit.gemspec</span><br></pre></td></tr></table></figure>
+<h3 id="2-7-文件改名"><a href="#2-7-文件改名" class="headerlink" title="2.7 文件改名"></a>2.7 文件改名</h3><p>既然如此，当你看到 Git 的 <code>mv</code> 命令时一定会困惑不已。要在 Git 中对文件改名，可以这么做：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git mv file_from file_to</span><br></pre></td></tr></table></figure>
+<p>它会恰如预期般正常工作。实际上，即便此时查看状态信息，也会明白无误地看到关于重命名操作的说明：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git mv README.txt README</span><br><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use <span class="string">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage)</span><br><span class="line"></span><br><span class="line">        renamed:    README.txt -&gt; README</span><br></pre></td></tr></table></figure>
+<p>其实，运行 <code>git mv</code> 就相当于运行了下面三条命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mv README.txt README</span><br><span class="line">$ git rm README.txt</span><br><span class="line">$ git add README</span><br></pre></td></tr></table></figure>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢老板，老板大气<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -221,16 +308,75 @@ var _hmt = _hmt || [];
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/11/Git%E5%9F%BA%E7%A1%80%E4%BA%8C/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/01/11/Git%E5%9F%BA%E7%A1%80%E4%BA%8C/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2021/01/11/GFM%E4%B8%8B%E7%9A%84md%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">GFM下的md文件编写</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -245,184 +391,32 @@ var _hmt = _hmt || [];
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GFM下的md文件编写" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/11/GFM%E4%B8%8B%E7%9A%84md%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99/">GFM下的md文件编写</a>
-    </h1>
-  
-
-        
-        <a href="/2021/01/11/GFM%E4%B8%8B%E7%9A%84md%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99/" class="archive-article-date">
-  	<time datetime="2021-01-10T16:38:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- toc -->
-
-<p><a target="_blank" rel="noopener" href="http://www.appinn.com/markdown/"><strong><em>Markdown\</em></strong></a> 是一种轻量级的<strong>「标记语言」</strong>，优点在于<br>- <strong>专注你的文字内容而不是排版样式。</strong><br>- <strong>轻松的导出 HTML、PDF 和本身的 .md 文件。</strong><br>- <strong>纯文本内容，兼容所有的文本编辑器与字处理软件。</strong><br>- <strong>可读，直观。适合所有人的写作语言</strong></p>
-<p>Hexo下使用的<strong>MarkDown</strong>为Github的<a target="_blank" rel="noopener" href="https://help.github.com/categories/writing-on-github/">GFM</a>，风格很漂亮，简洁美观大方。但是<em>GFM</em> 的<strong>MarkDown</strong>语法和<em>标准</em> 的<strong>MarkDown</strong>稍有不同，使用过程中需要注意一些。</p>
-        
-          <a class="article-more-a" href="/2021/01/11/GFM%E4%B8%8B%E7%9A%84md%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">博客搭建</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">markdown</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/11/GFM%E4%B8%8B%E7%9A%84md%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8F%96%E5%BE%97%E9%A1%B9%E7%9B%AE%E7%9A%84Git%E4%BB%93%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">1. 取得项目的Git仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%9C%A8%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95%E4%B8%AD%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B0%E4%BB%93%E5%BA%93"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 在工作目录中初始化新仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E4%BB%8E%E7%8E%B0%E6%9C%89%E4%BB%93%E5%BA%93%E5%85%8B%E9%9A%86"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 从现有仓库克隆</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%AE%B0%E5%BD%95%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0"><span class="toc-number">2.</span> <span class="toc-text">2. 记录每次更新</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%A3%80%E6%9F%A5%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 检查当前文件状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E8%B7%9F%E8%B8%AA%E6%96%B0%E6%96%87%E4%BB%B6"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 跟踪新文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E6%9A%82%E5%AD%98%E5%B7%B2%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 暂存已修改文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E6%9F%A5%E7%9C%8B%E5%B7%B2%E6%9A%82%E5%AD%98%E5%92%8C%E6%9C%AA%E6%9A%82%E5%AD%98%E7%9A%84%E6%9B%B4%E6%96%B0"><span class="toc-number">3.</span> <span class="toc-text">2.4 查看已暂存和未暂存的更新</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E6%8F%90%E4%BA%A4%E6%9B%B4%E6%96%B0"><span class="toc-number">3.1.</span> <span class="toc-text">2.5 提交更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E7%A7%BB%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-number">3.2.</span> <span class="toc-text">2.6 移除文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-%E6%96%87%E4%BB%B6%E6%94%B9%E5%90%8D"><span class="toc-number">3.3.</span> <span class="toc-text">2.7 文件改名</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
   
-    <article id="post-Git基础一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/29/Git%E5%9F%BA%E7%A1%80%E4%B8%80/">Git基础（一）</a>
-    </h1>
   
 
-        
-        <a href="/2020/12/29/Git%E5%9F%BA%E7%A1%80%E4%B8%80/" class="archive-article-date">
-  	<time datetime="2020-12-29T02:52:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-关于版本控制"><a href="#1-关于版本控制" class="headerlink" title="1. 关于版本控制"></a>1. 关于版本控制</h2><p><strong>版本控制</strong>是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统。</p>
-<p>采用版本控制系统（VCS）是个明智的选择。有了它你就可以将某个文件回溯到之前的状态，甚至将整个项目都<strong>回退到过去某个时间点</strong>的状态。你可以比较文件的变化细节，查出<strong>最后是谁修改了哪个地方</strong>，从而找出导致怪异问题出现的原因，又是谁在何时报告了某个功能缺陷等等。使用版本控制系统通常还意味着，就算你乱来一气把整个项目中的文件改的改删的删，你也照样可以轻松恢复到原先的样子。但额外增加的工作量却微乎其微。</p>
-        
-          <a class="article-more-a" href="/2020/12/29/Git%E5%9F%BA%E7%A1%80%E4%B8%80/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">git学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/29/Git%E5%9F%BA%E7%A1%80%E4%B8%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -447,8 +441,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
